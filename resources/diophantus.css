@@ -6,20 +6,34 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+form {
+    width: 600px;
+    text-align: center;
+    display: inline-block;
+}
+
 input[type=submit] {
     background: green;
     color: white;
     height: 3em;
-    width: 3em;
-    border: 1px solid green;
+    width: 10em;
+    border: 4px solid green;
     text-align: center;
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+input[type=submit]:active {
+    background: white;
+    color: green;
 }
 
 input[type=text] {
     height: 3em;
-    width: calc(600px - 3em);
+    width: 600px;
     border: 1px solid green;
     padding-left: 0.5em;
+    margin: 0 auto;
 }
 
 table.base {
@@ -50,6 +64,7 @@ p.error {
 }
 
 .caption td {
+    text-align: left;
     font-size: small;
     border-bottom: 1px solid green;
 }
@@ -80,12 +95,6 @@ span.header {
     width: 600px;
     text-align: right;
     padding-top: 0.5em;
-    display: inline-block;
-}
-
-form {
-    width: 600px;
-    text-align: right;
     display: inline-block;
 }
 
