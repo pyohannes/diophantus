@@ -10,7 +10,8 @@
 ; functions returning HTML xexpr entities
 
 (define (maintable formula)
-  (with-handlers ([exn:fail? <errormessage>])
+  (with-handlers ([exn:fail? (lambda (e) 
+                               (xexpr->string (<errormessage> e)))])
     (cond ((equal? formula "about")
            template-about)
           ((equal? formula "help")
@@ -22,6 +23,7 @@
 
 (define (<errormessage> e)
   `(p ((class "error"))
+      "Error: " 
       ,(exn-message e)))
 
 (define (<formulainput> formula)
